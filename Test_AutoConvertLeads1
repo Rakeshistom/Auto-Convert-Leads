@@ -1,0 +1,26 @@
+@isTest
+public class TestAutoConvertLeads1 {
+static testMethod void createnewlead () {
+User userToCreate = [Select id from user where profile.Name =’System Administrator’ AND IsActive = TRUE Limit 1];
+
+Test.startTest ();
+Lead leadToCreate = new Lead ();
+List Ids = New List ();
+leadToCreate.ownerid = userToCreate.id;
+leadToCreate.LastName =’Gupta’;
+leadToCreate.Company =’Salesforce’;
+leadToCreate.LeadSource =’Partner Referral’;
+leadToCreate.Rating =”;
+leadToCreate.Status =”;
+insert leadToCreate;
+
+List requests = new List ();
+AutoConvertLeads1.Requests request = new AutoConvertLeads1.Requests ();
+request.LeadId = leadToCreate.id;
+requests.add (request);
+
+AutoConvertLeads1.LeadAssign (requests);
+
+Test.stopTest ();
+}
+}
