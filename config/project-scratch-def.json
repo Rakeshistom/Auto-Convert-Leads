@@ -1,6 +1,7 @@
 {
-  "orgName": "petervandermeij company",
+  "orgName": "Invocable Lead Convert Org",
   "edition": "Developer",
+  "language": "en_US",
   "features": ["EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
